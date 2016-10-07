@@ -1,31 +1,38 @@
 @import 'mixins';
 @import 'vars';
-@import 'grid';
-
 // base
-
 * {
     box-sizing: border-box;
 }
+
 html {
     font: $main-font;
     color: $moonrise;
 }
+
 body {
     background: $moonrise;
     margin: 0 0;
 }
+
 a {
     color: $link;
     text-decoration: none;
     @include transition(all 0.35s ease-in-out);
 }
+
 a:hover {
     text-decoration: underline;
 }
-h1, h2, h3, h4, h5 {
+
+h1,
+h2,
+h3,
+h4,
+h5 {
     font: $title-font;
 }
+
 h1 {
     font-size: 2.2rem;
     line-height: 2.8rem;
@@ -34,6 +41,7 @@ h1 {
         line-height: 2.4rem;
     }
 }
+
 h2 {
     font-size: 1.8rem;
     line-height: 2.2rem;
@@ -42,6 +50,7 @@ h2 {
         line-height: 2rem;
     }
 }
+
 h3 {
     font-size: 1.5rem;
     line-height: 2.8rem;
@@ -51,15 +60,23 @@ h3 {
     }
 }
 
+ol,
+ul {
+    list-style: none;
+}
+
 .align-left {
     text-align: left;
 }
+
 .align-right {
     text-align: right;
 }
+
 .align-center {
     text-align: center;
 }
+
 hr {
     display: block;
     height: 1px;
@@ -69,12 +86,12 @@ hr {
     margin: 3em auto;
     padding: 0;
 }
+
 .highlight {
     color: $moonrise-ac;
 }
 
 // header
-
 header {
     margin: 0;
 }
@@ -101,32 +118,58 @@ header {
         flex-shrink: 0;
         width: 100%;
     }
-    * {
-        margin: 0 1rem 0 0;
-    }
     > .inner {
         flex-grow: 1;
-        margin: 0 0 2em 0;
     }
-    .avatar {
-        margin: 0 1em 1.5em 0;
-        width: 100px;
-        @include border-radius(50%);
-    }
-    p {
-        font-size: 1.2rem;
-        color: $kingdom-ac;
-        position: relative;
-    }
-    a {
-        text-decoration: none;
+    .inner {
+        margin: 0 1em 0 0;
+        .avatar {
+            margin: 0 0 1.5em;
+            width: 100px;
+            @include border-radius(50%);
+        }
+        .contact {
+            ul {
+                margin: 2em 0;
+                @include bp-sm {
+                    margin: 0;
+                    padding: 1em 0 0;
+                }
+            }
+            ul li {
+                display: inline-block;
+            }
+            i {
+                font-size: 2.5em;
+                color: $link;
+                padding-left: 0.5em;
+                @include bp-sm {
+                    padding: 0 0.2em;
+                }
+            }
+        }
+        p {
+            font-size: 1.2rem;
+            color: $kingdom-ac;
+            position: relative;
+        }
+        h1 {
+            color: $moonrise;
+        }
+        a {
+            text-decoration: none;
+        }
+        @include bp-sm {
+            margin: 0;
+            text-align: center;
+        }
     }
     @include bp-sm {
         background-attachment: scroll;
         background-position: center center, top-left;
         background-size: cover, auto;
         left: auto;
-        padding: 6em, 4em;
+        padding: 6em 4em;
         position: relative;
         width: 100%;
         text-align: center;
@@ -134,21 +177,22 @@ header {
 }
 
 // main
-
 #main {
     margin-left: 30%;
     max-width: 90%;
     color: $kingdom;
-    div, h2, p {
+    div,
+    h2,
+    p {
         padding: 0 3rem;
         @include bp-sm {
             padding: 1rem;
         }
     }
     @include bp-sm {
-            margin: 2rem 0 0;
-            max-width: 100%;
-        }
+        margin: 2rem 0 0;
+        max-width: 100%;
+    }
     .intro {
         h2 {
             padding-top: 2rem;
@@ -185,5 +229,26 @@ header {
                 padding: 0 1rem;
             }
         }
+    }
+}
+
+// footer
+footer {
+    width: 80%;
+    bottom: 0;
+    padding: 1em 2em;
+    @extend .align-right;
+    p {
+        color: $kingdom-ac;
+    }
+    i {
+        display: inline-block;
+        font-size: 1.5em;
+        color: $link;
+        padding: 0.2rem;
+    }
+    @include bp-sm {
+        width: 100%;
+        padding: 0.5em;
     }
 }
