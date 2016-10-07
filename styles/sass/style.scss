@@ -76,9 +76,7 @@ hr {
 // header
 
 header {
-    h1, h2, h3 {
-        color: $moonrise;
-    }
+    margin: 0;
 }
 
 .header {
@@ -87,7 +85,7 @@ header {
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
-    background-attachment: scroll, fixed;
+    background-attachment: fixed, scroll;
     background-image: url("/img/bg.jpg"), url("/img/overlay.png");
     background-position: top left, top left;
     background-repeat: no-repeat, repeat;
@@ -98,19 +96,20 @@ header {
     position: fixed;
     top: 0;
     width: 30%;
+    @extend .align-right;
     > * {
         flex-shrink: 0;
         width: 100%;
     }
     * {
-        margin: 0 2rem 0 0;
+        margin: 0 1rem 0 0;
     }
     > .inner {
         flex-grow: 1;
         margin: 0 0 2em 0;
     }
     .avatar {
-        margin: 0 4em 1em 0;
+        margin: 0 1em 1.5em 0;
         width: 100px;
         @include border-radius(50%);
     }
@@ -118,6 +117,9 @@ header {
         font-size: 1.2rem;
         color: $kingdom-ac;
         position: relative;
+    }
+    a {
+        text-decoration: none;
     }
     @include bp-sm {
         background-attachment: scroll;
@@ -127,6 +129,7 @@ header {
         padding: 6em, 4em;
         position: relative;
         width: 100%;
+        text-align: center;
     }
 }
 
@@ -158,6 +161,29 @@ header {
         }
     }
     .works {
-
+        h2 {
+            padding-bottom: 2rem;
+        }
+    }
+    .masonry {
+        column-count: 2;
+        @include bp-md {
+            column-count: 1;
+            margin: 0 auto;
+        }
+        .item {
+            display: inline-block;
+            margin: 0 0 1em;
+            @extend .align-center;
+            padding: 1em;
+            width: 100%;
+            @include box-shadow(1px 1px 2px 0 #ccc);
+            @include bp-sm {
+                margin: 0 auto;
+            }
+            p {
+                padding: 0 1rem;
+            }
+        }
     }
 }
