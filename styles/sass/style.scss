@@ -1,0 +1,125 @@
+@import 'mixins';
+@import 'vars';
+@import 'grid';
+
+// base
+
+* {
+    box-sizing: border-box;
+}
+html {
+    font: $main-font;
+    color: $moonrise;
+}
+body {
+    background: $moonrise;
+    margin: 0 0;
+}
+a {
+    color: $link;
+    text-decoration: none;
+    @include transition(all ease-in-out 0.35s);
+}
+h1, h2, h3, h4, h5 {
+    font: $title-font;
+}
+.h1-dim, .h2-dim, .h3-dim {
+    font: $title-font-dim;
+}
+h1, .h1-dim {
+    font-size: 2.2rem;
+    @include bp-xs {
+        font-size: 2rem;
+    }
+}
+h2, .h2-dim {
+    font-size: 1.8rem;
+    @include bp-xs {
+        font-size: 1.6rem;
+    }
+}
+h3, .h3-dim {
+    font-size: 1.5rem;
+    @include bp-xs {
+        font-size: 1.4rem;
+    }
+}
+
+.align-left {
+    text-align: left;
+}
+.align-right {
+    text-align: right;
+}
+.align-center {
+    text-align: center;
+}
+
+// header
+
+header {
+    h1, h2, h3 {
+        color: $moonrise;
+        line-height: 3rem;
+        @include bp-sm {
+            line-height: 2.2rem;
+        }
+    }
+}
+
+.header {
+    background-color: $kingdom;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    background-attachment: scroll, fixed;
+    background-image: url("/img/bg.jpg"), url("/img/overlay.png");
+    background-position: top left, top left;
+    background-repeat: no-repeat, repeat;
+    background-size: auto 100%, auto;
+    height: 100%;
+    padding: 8em 4em;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 35%;
+    > * {
+        flex-shrink: 0;
+        width: 100%;
+    }
+    * {
+        margin: 0 2rem 0 0;
+    }
+    > .inner {
+        flex-grow: 1;
+        margin: 0 0 2em 0;
+    }
+    .avatar {
+        margin: 0 4em 1em 0;
+        width: 100px;
+        @include border-radius(50%);
+    }
+    p {
+        font-size: 1.2rem;
+        color: $kingdom-ac;
+        position: relative;
+        line-height: 1.8rem;
+    }
+    @include bp-sm {
+        background-attachment: scroll;
+        background-position: center center, top-left;
+        background-size: cover, auto;
+        left: auto;
+        padding: 6em, 4em;
+        position: relative;
+        width: 100%;
+    }
+}
+
+// main
+
+.main {
+    margin-left: 35%;
+    max-width: 80%;
+}
