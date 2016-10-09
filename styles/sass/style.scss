@@ -36,7 +36,7 @@ h5 {
 h1 {
     font-size: 2.2rem;
     line-height: 2.8rem;
-    @include bp-xs {
+    @include bp-md {
         font-size: 2rem;
         line-height: 2.4rem;
     }
@@ -127,6 +127,9 @@ header {
             margin: 0 0 1.5em;
             width: 100px;
             @include border-radius(50%);
+            @include bp-md {
+                margin: 0;
+            }
         }
         .contact {
             ul {
@@ -138,11 +141,22 @@ header {
             }
             ul li {
                 display: inline-block;
+                @include bp-md {
+                    display: block;
+                }
+                @include bp-sm {
+                    display: inline-block;
+                }
             }
             i {
                 font-size: 2.5em;
+                line-height: 1.3em;
                 color: $link;
-                padding-left: 0.5em;
+                padding: 0 0.2em;
+                @include bp-md {
+                    line-height: 1.4em;
+                    padding: 0.3em;
+                }
                 @include bp-sm {
                     padding: 0 0.2em;
                 }
@@ -163,6 +177,9 @@ header {
             margin: 0;
             text-align: center;
         }
+    }
+    @include bp-md {
+        padding: 4em 2em;
     }
     @include bp-sm {
         background-attachment: scroll;
