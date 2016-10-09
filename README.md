@@ -1,6 +1,6 @@
 **Portfolio site v2: Built for FCC front-end project**
 
-[Preview the site here](https://github.com/emimnemonic/Portfolio-FCC)
+[Preview the site here](https://emimnemonic.github.io/Portfolio-FCC/)
 
 The [first version of my portfolio project](http://codepen.io/emimnemonic/full/JGjmeX/) was all right but I wanted to do a responsive, minimalist UI one-page portfolio theme with a fixed sidebar navigation menu.
 
