@@ -12,7 +12,10 @@ html {
 
 body {
     background: $moonrise;
-    margin: 0 0;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -227,8 +230,9 @@ header {
         }
     }
     .masonry {
+        width: 100%;
         column-count: 2;
-        @include bp-md {
+        @include bp-lg {
             column-count: 1;
             margin: 0 auto;
         }
@@ -238,11 +242,15 @@ header {
             @extend .align-center;
             padding: 1em;
             width: 100%;
-            @include box-shadow(1px 1px 2px 0 #ccc);
+            @include box-shadow(1px 1px 2px 0 $kingdom-ac);
             @include bp-sm {
-                margin: 0 auto;
+                margin: 0.3em auto;
+                padding: 1em 0;
             }
-            p {
+            img {
+                max-width: 100%;
+            }
+            p, img {
                 padding: 0 1rem;
             }
         }
